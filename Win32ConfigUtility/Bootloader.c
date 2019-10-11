@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <setupapi.h>
-#include <ddk/hidsdi.h>
-#include <ddk/hidclass.h>
+#include <hidsdi.h>
+#include <hidclass.h>
 #include "Bootloader.h"
 
 #define strcasecmp stricmp

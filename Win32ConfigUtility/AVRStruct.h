@@ -41,7 +41,7 @@ typedef enum {
 typedef enum {
     HOME =   0x40,
     ARCADE = 0x80
-} DEVICE_TYPE;
+} BOARD_TYPE;
 /** Connection type. This is written on initialization, after EEPROM load. */
 typedef enum {
     C_Default = 0x00, 
