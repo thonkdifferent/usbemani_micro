@@ -26,8 +26,8 @@ void Button_Init(void) {
 	B07_DDR  &= ~0xFF;
 	B07_PORT |=  0xFF;
 	
-	B8F_DDR  &= ~0xF0;
-	B8F_PORT |=  0xF0;
+	B8F_DDR  &= ~0xF3;
+	B8F_PORT |=  0xF3;
 
 	// Since setup is done, we can re-enable interrupts.
 	sei();
@@ -44,14 +44,14 @@ uint16_t Button_GetState(uint8_t useLights, uint16_t LightsData) {
 	B07_PORT |=  0xFF;
 	buf07 	  = ~B07_PIN;
 
-	B07_DDR  &= ~0xF0;
-	B07_PORT |=  0xF0;
+	B07_DDR  &= ~0xF3;
+	B07_PORT |=  0xF3;
 	buf8F     = ~B8F_PIN;
 
 	// ...and output them to the main buffer.
 	// Keep in mind that on the home board, we've already set up our pins with PS2/WS28XX lighting in mind.
 	buf  =   buf07;
-	buf += ((buf8F & 0xF0) << 4);
+	buf += ((buf8F & 0xF3) << 4);
 
 	// We can finally return our data.
 	return (buf & 0x0FFF);
